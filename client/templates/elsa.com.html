@@ -1,0 +1,802 @@
+<head>
+  <title>Elsa Figueira</title>
+</head>
+
+<body></body>
+
+
+<template name="layout">
+	{{> header}}
+	{{> contact}}
+	{{> intro}}
+	{{> yield}}
+	{{> media}}
+	{{> social}}
+	{{> actors}}
+	{{> party}}
+	{{> team}}
+	{{> partners}}
+	{{> thanks}}
+	{{> footer}}
+</template>
+
+<template name="header">
+<div class="ui basic very padded center aligned segment" style="padding-top:5px;padding-bottom:0px;">
+<div class="ui large secondary menu">	
+	<div class="menu right">
+		<div class="item">
+			<div class="ui language floating dropdown link item">
+			  <i class="world icon"></i>
+			  <div class="text">{{i18n_currentLanguage.name}}</div>
+			  <div class="menu">
+			  	<div class="item" data-value="et">Eesti</div>
+			    <div class="item" data-value="en">English</div>
+			    <div class="item" data-value="pt">Português</div>
+			  </div>
+			</div>
+			{{#if currentUser}}
+				<button class="ui icon basic circular button" id="logout" data-content="{{_ 'Logout'}}" data-variation="inverted">
+					<i class="lock icon"></i>
+					{{_ "Hello"}} {{helloName}}!
+				</button>
+			{{else}}
+				<button class="ui icon basic circular button" id="login" data-content="{{_ 'Create account or login'}}" data-variation="inverted">	
+					<i class="user icon"></i>
+				</button>
+			{{/if}}		
+		</div>
+	</div>
+</div>
+</div>
+</template>
+
+<template name="intro">
+<div class="ui basic very padded center aligned segment">
+	<h2><img class="ui avatar image hand" src="/team/team-pekagboom.jpg" data-title="Pekagboom" data-content="{{_ 'musician and author of the story'}}" data-variation="inverted"></h2>
+	<h1 class="ui center aligned icon header heroheader"> &ldquo;{{_ "what eyes can see, we can change"}}.&rdquo; &mdash; Pekagboom <br /></h1>
+</div>
+</template>
+
+<template name="stopviolence">
+<div class="ui basic very padded center aligned segment" style="padding-top:0px;">
+  	<button class="ui circular basic compact large pink button" data-content="{{_ 'elsa is a fictional character'}}" data-variation="inverted">
+ 		{{_ "who is elsa"}}
+	</button>
+	<button class="ui circular basic compact large pink button" data-content="{{_ 'domestic violence is a global epidemic'}}" data-variation="inverted">
+	 	{{_ "why"}}
+	</button>
+	<button class="ui circular basic compact large pink button" data-content="{{_ 'by spreading awareness'}}" data-variation="inverted">
+	 	{{_ "how"}}
+	</button>
+	<div class="ui horizontal divider"></div>
+	<div class="ui massive circular animated fade pink button joinnow">
+		<div class="visible content">
+		<i class="video play icon"></i>
+		Elsa Figueira
+		</div>
+		<div class="hidden content">
+			<i class="video play icon"></i>
+		</div>
+  	</div>
+  	<div class="ui horizontal divider"></div>
+  	<div class="ui basic very padded center aligned segment" style="padding-top:0px;padding-bottom:0px;">
+		<h4 class="ui center aligned header">
+			<i class="calendar pink icon"></i>
+		</h4>
+	  	<div class="ui middle aligned relaxed large list">
+		  <div class="item">
+		  	<div class="content">
+		      <div class="description"><i class="map marker pink icon"></i>{{_ 'Sao Tome and Principe'}} — {{_ '5 february'}}</div>
+		    </div>
+		  </div>
+		 <!-- <div class="item">
+		  	<div class="content">
+		      <button class="ui icon basic circular button showbitcoin" data-content="We're now raising 10 Bitcoins" data-variation="inverted">	
+  				<a href="https://twitter.com/krishaamer/status/664769352261107712">Join the crowdfunding</a>
+				</button>
+		    </div>
+		  </div>  -->
+		</div>
+	</div>
+</div>
+</template>
+
+<template name="video">
+<div class="ui basic very padded center aligned segment" id="elsa">
+	<div class="ui middle center aligned grid">
+		<div class="column">
+			<div class="ui embed" data-source="youtube" data-id="hPkhVh_hlY8"></div>
+			<!--<div class="ui embed" data-source="vimeo" data-id="140504267"></div>-->
+		</div>
+	</div>
+</div>
+</template>
+
+<template name="contact">
+<div class="ui basic modal contact">
+  <i class="close icon"></i>
+  <div class="header">
+    {{_ "Get in touch at"}} <a href="mailto:kris@haam.co">kris@haam.co</a> {{_ "or"}} +372 53073123
+  </div>
+  <div class="content"></div>
+</div>
+</template>
+
+<template name="who">
+<div class="ui basic very padded aligned segment">
+<div class="container">
+<div class="ui tall stacked aligned segment">
+  <p>{{_ "full story"}}</p>
+</div>
+</div>
+</div>
+</template>
+
+<template name="media">
+<div class="ui basic very padded aligned segment">
+<h1 class="ui aligned sectionheader">{{_ "elsa figueira in the media"}} <i class="circular film pink icon link" data-content="{{_ 'elsa has been covered in'}}" data-variation="inverted"></i></h1>       
+<div class="ui three stackable cards">
+		<div class="ui fluid card">
+			<div class="content">
+				<div class="right floated meta">{{_ "documentary what should elsa do"}}</div>
+    			<img class="ui avatar image hand" src="/team/team-pekagboom.jpg" data-title="Pekagboom" data-content="{{_ 'musician and author of the story'}}" data-variation="inverted"> Pekagboom
+		  	</div>
+		  	<div class="image">
+			    <div class="ui embed" data-source="youtube" data-id="PN-UKGvSSls"></div>
+			</div>
+		</div>
+		<div class="ui fluid card">
+			<div class="content">
+				<div class="right floated meta">{{_ "interview"}}</div>
+    			<img class="ui avatar image hand" src="/team/team-mario-lopes.jpg" data-title="Mário Lopes" data-content="{{_ 'public relations'}}" data-variation="inverted"> Mário Lopes
+		  	</div>
+		  	<div class="image">
+			    <div class="ui embed" data-source="youtube" data-id="kDAfvpO61Ao"></div>
+			</div>
+		</div>
+		<div class="ui fluid card">
+			<div class="content">
+				<div class="right floated meta">{{_ "stptv changing mentalities"}}</div>
+    			<img class="ui avatar image hand" src="/team/team-cynthia-tiny.jpg" data-title="Cynthia Tiny" data-content="{{_ 'public relations'}}" data-variation="inverted"> Cynthia Tiny
+		  	</div>
+		  	<div class="image">
+			    <div class="ui embed" data-source="youtube" data-id="tFHtky6N5yc"></div>
+			</div>
+		</div>
+		<div class="ui fluid card">
+			<div class="content">
+				<div class="right floated meta">{{_ "bue fixe rdp africa"}}</div>
+    			<img class="ui avatar image hand" src="/team/team-marlene-fortes.jpg" data-title="Marlene Fortes" data-content="{{_ 'public relations'}}" data-variation="inverted"> Marlene Fortes
+		  	</div>
+		  	<div class="image">
+			    <a href="https://www.youtube.com/watch?v=CsAVDFtHV6g">
+			    	<img class="ui fluid image" src="/media/elsa-figuiera_pekagboom-marlene-fortes-rdp-africa-2.jpg">
+			    </a>
+			</div>
+		</div>
+		<div class="ui fluid card">
+			<div class="content">
+				<div class="right floated meta">{{_ "interview with andim media"}}</div>
+    			<img class="ui avatar image hand" src="/team/team-regina-fereira.jpg" data-title="Regina Fereira" data-content="{{_ 'protagonist in the role of elsa figueira'}}" data-variation="inverted"> Regina Fereira
+		  	</div>
+		  	<div class="image">
+			    <a href="https://www.youtube.com/watch?v=N5Q1D4iRG-U">
+			    	<img class="ui fluid image" src="/media/elsa-figueira-andim-regina-fereira-valeri-andre-menezes.jpg">
+			    </a>
+			</div>
+		</div>
+		<div class="ui fluid card">
+			<div class="content">
+				{{> feed}}
+			</div>
+		</div>
+</div>
+</div>
+</template>
+
+<template name="feed">
+<div class="ui feed">
+  <div class="event">
+    <div class="label">
+      <img class="ui image hand" src="/team/team-katya-aragao.jpg"  data-title="Katya Aragão" data-content="{{_ 'producer and actress in the role of the police'}}" data-variation="inverted">
+    </div>
+    <div class="content">
+      <div class="summary">
+        Katya Aragão {{_ "at the radio"}} <a href="https://soundcloud.com/elsafigueira/elsafigueira-radio-voice-of-america-portugues">Voice of America (VOA) Português</a>
+      </div>
+      <div class="extra text">
+        "{{_ "domestic violence is a problem that plagues the whole world"}}."
+      </div>
+      <div class="extra images">
+        <a href="https://soundcloud.com/elsafigueira/elsafigueira-radio-voice-of-america-portugues"><img class="ui image" src="/media/elsa-figueira-voice-of-america-katya-aragao-enerlid-franca.jpg"></a>
+      </div>
+    </div>
+  </div>
+  <div class="event">
+    <div class="label">
+      <img class="ui image hand" src="/team/team-pekagboom.jpg" data-title="Pekagboom" data-content="{{_ 'musician and author of the story'}}" data-variation="inverted">
+    </div>
+    <div class="content">
+      <div class="summary">
+        {{_ "Pekagboom at"}} <a href="http://www.rtp.pt/play/p1441/e174507/bem-vindos-2014">RTP Africa's Bem-Vindos</a> {{_ "with the host"}} Cláudia Leal
+      </div>
+      <div class="extra images">
+        <a href="http://www.rtp.pt/play/p1441/e174507/bem-vindos-2014"><img src="/media/elsa-figueira-pekagboom-bem-vindos.jpg"></a>
+      </div>
+    </div>
+  </div>
+  <div class="event">
+    <div class="label">
+      <img class="ui image hand" src="/team/team-vivalda-prazeres.jpg" data-title="Vivalda Prazeres" data-content="{{_ 'public relations'}}" data-variation="inverted">
+    </div>
+    <div class="content">
+      <div class="summary">
+        Vivalda dos Prazeres, Pekagboom {{_ "and"}} Kris Haamer {{_ "at the portal"}}  <a href="http://steppesinsync.com/2014/11/26/sao-tomean-estonian-elsa-figueira-creates-positive-role-models-keeps-anti-violence-discussion-going/">Steppes in Sync</a>
+      </div>
+    </div>
+  </div>
+  <div class="event">
+    <div class="label">
+      <img class="ui image hand"  src="/team/team-mario-lopes.jpg" data-title="Mário Lopes" data-content="{{_ 'public relations'}}" data-variation="inverted">
+    </div>
+    <div class="content">
+      <div class="summary">
+        Mário Lopes, Pekagboom {{_ "and"}} Kris Haamer {{_ "at the radio"}} <a href="http://www.dw.com/pt/filme-produzido-em-são-tomé-e-pr%C3%ADncipe-fortalece-poder-da-mulher-contra-a-violência-doméstica/a-18084781">Deutsche Welle</a>
+      </div>
+    </div>
+   </div>
+    <div class="event">
+    <div class="label">
+      <img class="ui image hand" src="/team/team-kris-haamer.jpg" data-title="Kris Haamer" data-content="{{_ 'director, producer, co-author'}}" data-variation="inverted">
+    </div>
+    <div class="content">
+      <div class="summary">
+        Kris Haamer {{_ "launch announcement"}} {{_ "at the portal"}} <a href="http://www.redeangola.info/crowdfunding-para-filme-sobre-violencia-domestica/">Rede Angola</a>
+      </div>
+    </div>
+  </div>
+</div>
+</template>
+
+<template name="social">
+<div class="ui basic very padded aligned segment">
+<h1 class="ui aligned sectionheader">{{_ "no to violence"}} <i class="circular add user pink icon link" data-content="{{_ 'you can share your thoughts'}}" data-variation="inverted"></i></h1>
+<div class="ui three column stackable grid container">
+	<div class="column">
+		<img class="ui massive fluid rounded image" src="/social/supporters-1.jpg">
+	</div>
+	<div class="column">
+		<img class="ui massive fluid rounded image" src="/social/supporters-2.jpg">
+	</div>
+	<div class="column">
+		<img class="ui massive fluid rounded image" src="/social/supporters-3.jpg">
+	</div>
+</div>
+</div>
+</template>
+
+
+<template name="principalactors">
+<div class="ui basic very padded circular center aligned segment">
+<h2>{{_ "principal actors"}}</h2>
+<div class="ui huge horizontal list">
+	<div class="item">
+	    <img class="ui avatar image hand" src="/team/team-pekagboom.jpg" data-title="Pekagboom" data-content="{{_ 'musician and author of the story'}}" data-variation="inverted">
+	    <div class="content">
+	    	<div class="header">Pekagboom</div>
+	    </div>
+	</div>
+	<div class="item">
+	    <img class="ui avatar image hand" src="/team/team-regina-fereira.jpg" data-title="Regina Fereira" data-content="{{_ 'protagonist in the role of elsa figueira'}}" data-variation="inverted">
+	    <div class="content">
+	    	<div class="header">Regina Fereira</div>
+	    </div>
+	</div>
+	<div class="item">
+	    <img class="ui avatar image hand" src="/team/team-yanira-tiny.jpg" data-title="Yanira Tiny" data-content="{{_ 'the voice of elsa figueira'}}" data-variation="inverted">
+	    <div class="content">
+	    	<div class="header">Yanira Tiny</div>
+	    </div>
+	</div>
+	<div class="item">
+	    <img class="ui avatar image hand" src="/team/team-valeri-andre-menezes.jpg" data-title="Valeri André Menezes" data-content="{{_ 'actor in the role of Dom Pedro, the husband'}}" data-variation="inverted">
+	    <div class="content">
+	      	<div class="header">Valeri André Menezes</div>
+	    </div>
+	</div>
+	<div class="item">
+	    <img class="ui avatar image hand" src="/team/team-josefina-antonia.jpg" data-title="Josefina Antônia" data-content="{{_ 'actress in the role of elsas mother'}}" data-variation="inverted">
+	    <div class="content">
+	      	<div class="header">Josefina Antônia</div>
+	    </div>
+	</div>
+	<div class="item">
+	    <img class="ui avatar image hand" src="/team/team-revete-fernandes.jpg" data-title="Revete Fernandes" data-content="{{_ 'actor in the role of elsas father'}}" data-variation="inverted">
+	    <div class="content">
+	      	<div class="header">Revete Fernandes</div>
+	    </div>
+	</div>
+	<div class="item">
+	    <img class="ui avatar image hand" src="/team/team-katya-aragao.jpg" data-title="Katya Aragão" data-content="{{_ 'producer and actress in the role of the police'}}" data-variation="inverted">
+	    <div class="content">
+	      <div class="header">Katya Aragão</div>
+	    </div>
+	  </div>
+	  <div class="item">
+	    <img class="ui avatar image hand" src="/team/team-enerlid-franca-e-lagos.jpg" data-title="Enerlid Franca e Lagos" data-content="{{_ 'producer and actor in the role of the police'}}" data-variation="inverted">
+	    <div class="content">
+	      <div class="header">Enerlid Franca e Lagos</div>
+	    </div>
+	 </div>	
+	<div class="item">
+	    <img class="ui avatar image hand" src="/team/team-ana-pinheiro.jpg" data-title="Ana Pinheiro" data-content="{{_ 'actress in the role of elsas friend'}}" data-variation="inverted">
+	    <div class="content">
+	      	<div class="header">Ana Pinheiro</div>
+	    </div>
+	</div>
+	<div class="item">
+	    <img class="ui avatar image hand" src="/team/team-danila-costa.jpg" data-title="Danila Costa" data-content="{{_ 'actress in the role of elsas friend'}}" data-variation="inverted">
+	    <div class="content">
+	      	<div class="header">Danila Costa</div>
+	    </div>
+	</div>
+</div>
+</div>
+</template>
+
+<template name="weddingguests">
+<div class="ui basic very padded circular center aligned segment">
+		<h2>{{_ "extras at the wedding"}}</h2>
+		<div class="ui huge horizontal list">
+  		<div class="item link">
+			<img class="ui avatar image hand" src="/team/team-assis-abril.jpg" data-title="Assis Abril" data-content="{{_ 'extra at the wedding'}} {{_ 'member of the acting group early morning surprise'}}" data-variation="inverted">
+			<div class="content">
+			  <div class="header">Assis Abril</div>
+			</div>
+		</div>
+		<div class="item link">
+			<img class="ui avatar image hand" src="/team/team-clinton-lima.jpg" data-title="Clinton Lima" data-content="{{_ 'extra at the wedding'}} {{_ 'member of the acting group early morning surprise'}}" data-variation="inverted">
+			<div class="content">
+			  <div class="header">Clinton Lima</div>
+			</div>
+		</div>
+		<div class="item link">
+			<img class="ui avatar image hand" src="/team/team-dio-lima.jpg" data-title="Dio Lima" data-content="{{_ 'extra at the wedding'}}, {{_ 'painter'}}" data-variation="inverted">
+			<div class="content">
+			  <div class="header">Dio Lima</div>
+			</div>
+		</div>
+	  <div class="item link">
+	    <img class="ui avatar image hand" src="/team/team-edzania-graca.jpg" data-title="Edzania Graça" data-content="{{_ 'extra at the wedding'}} {{_ 'member of the acting group early morning surprise'}}" data-variation="inverted">
+	    <div class="content">
+	      <div class="header">Edzania Graça</div>
+	    </div>
+	  </div>
+	  <div class="item link">
+	    <img class="ui avatar image hand" src="/team/team-ierquine-vaz.jpg" data-title="Ierquine Vaz" data-content="{{_ 'extra at the wedding'}} {{_ 'member of the acting group early morning surprise'}}" data-variation="inverted">
+	    <div class="content">
+	      <div class="header">Ierquine Vaz</div>
+	    </div>
+	  </div>
+	  <div class="item link">
+	    <img class="ui avatar image hand" src="/team/team-juelce-vera-cruz.jpg" data-title="Juelce Vera Cruz" data-content="{{_ 'extra at the wedding'}} {{_ 'member of the acting group early morning surprise'}}" data-variation="inverted">
+	    <div class="content">
+	      <div class="header">Juelce Vera Cruz</div>
+	    </div>
+	  </div>
+		  <div class="item link">
+		    <img class="ui avatar image hand" src="/team/team-rute-ceita.jpg" data-title="Rute Ceita" data-content="{{_ 'extra at the wedding'}} {{_ 'member of the acting group early morning surprise'}}" data-variation="inverted">
+		    <div class="content">
+		      <div class="header">Rute Ceita</div>
+		    </div>
+		  </div>
+		  <div class="item link">
+		    <img class="ui avatar image hand" src="/team/team-vanessa-viegas.jpg" data-title="Vanessa Viegas" data-content="{{_ 'extra at the wedding'}}, {{_ 'member of the acting group early morning surprise'}}" data-variation="inverted">
+		    <div class="content">
+		      <div class="header">Vanessa Viegas</div>
+		    </div>
+		  </div>
+		  <div class="item link">
+		    <img class="ui avatar image hand" src="/team/team-joimar-leite.jpg" data-title="Joimar Leite" data-content="{{_ 'extra at the wedding'}} {{_ 'member of the acting group early morning surprise'}}" data-variation="inverted">
+		    <div class="content">
+		      <div class="header">Joimar Leite</div>
+		    </div>
+		  </div>
+		  <div class="item link">
+		    <img class="ui avatar image hand" src="/team/team-sonia-conceicao.jpg" data-title="Sónia Conceição" data-content="{{_ 'extra at the wedding'}} {{_ 'member of the acting group early morning surprise'}}" data-variation="inverted">
+		    <div class="content">
+		      <div class="header">Sónia Conceição</div>
+		    </div>
+		  </div>
+		  <div class="item link">
+		    <img class="ui avatar image hand" src="/team/team-shinteya-teal.jpg" data-title="Shinteya Teal" data-content="{{_ 'extra at the wedding'}} {{_ 'member of the acting group early morning surprise'}}" data-variation="inverted">
+		    <div class="content">
+		      <div class="header">Shinteya Teal</div>
+		    </div>
+		  </div>
+		  <div class="item link">
+		    <img class="ui avatar image hand" src="/team/team-carlos-semedo.jpg" data-title="Carlos Semedo" data-content="{{_ 'extra at the wedding'}} {{_ 'member of the acting group early morning surprise'}}" data-variation="inverted">
+		    <div class="content">
+		      <div class="header">Carlos Semedo</div>
+		    </div>
+		  </div>
+	</div>
+</div>
+</template>
+
+<template name="actors">
+<div class="ui basic very padded aligned segment">
+<h1 class="ui aligned sectionheader">{{_ "our team"}} <i class="circular rocket pink icon link" data-content="{{_ 'our team, actors, partners and supporters'}}" data-variation="inverted"></i></h1>
+<div class="ui three column stackable grid container">
+	<div class="column">
+		  <img class="ui rounded image" src="/actors/elsa-figueira_actors-angolares.jpg">
+	</div>
+	<div class="column">
+		<img class="ui rounded image" src="/actors/elsa-figueira_actors-elsa-figueira-parents.jpg" >
+	</div>
+	<div class="column">
+		<img class="ui rounded image" src="/actors/elsa-figueira_actors-police.jpg">
+	</div>
+</div>
+<div class="ui two column stackable grid container">
+	<div class="column"> 
+		{{> principalactors}}
+	</div>
+	<div class="column"> 
+		{{> weddingguests}}
+	</div>
+</div>
+</div>
+</template>
+
+<template name="party">
+<div class="ui basic very padded aligned segment">
+<h1 class="ui aligned sectionheader">{{_ "opening party"}} <i class="circular birthday pink icon link" data-content="{{_ 'pico mocambo was full of people'}}" data-variation="inverted"></i></h1>
+<div class="ui three column stackable grid container">
+	<div class="column">
+		<img class="ui huge rounded image" src="/launch/elsa-figueira_pico-mocambo-audience.jpg">
+	</div>
+	<div class="column">
+		<img class="ui huge rounded image" src="/launch/elsa-figueira_team-galo-canta.jpg">
+	</div>
+	<div class="column">
+		<img class="ui huge rounded image" src="/launch/elsa-figueira_enerlid-franca-katia-silva.jpg">
+	</div>
+</div>
+</div>
+</template>
+
+<template name="team">
+<div class="ui basic very padded aligned segment" id="team">
+<h1 class="ui aligned sectionheader">{{_ "creators"}} <i class="circular heart red icon link" data-content="{{_ 'thank you everyone'}}" data-variation="inverted"></i></h1>
+
+<div class="ui basic very padded circular center aligned segment">
+	<div class="ui huge horizontal list">
+		<div class="item">
+		    <img class="ui avatar image hand" src="/team/team-pekagboom.jpg" data-title="Pekagboom" data-content="{{_ 'musician and author of the story'}}" data-variation="inverted">
+		    <div class="content">
+		    	<div class="header">Pekagboom</div>
+		    </div>
+		</div>
+		<div class="item">
+		    <img class="ui avatar image hand" src="/team/team-kris-haamer.jpg" data-title="Kris Haamer" data-content="{{_ 'director, producer, co-author'}}" data-variation="inverted">
+		    <div class="content">
+		      <div class="header">Kris Haamer</div>
+		    </div>
+		</div>
+		  <div class="item">
+		    <img class="ui avatar image hand" src="/team/team-carla-rebelo.jpg" data-title="Carla Rebelo" data-content="{{_ 'co-author'}}" data-variation="inverted">
+		    <div class="content">
+		      <div class="header">Carla Rebelo</div>
+		    </div>
+		  </div>
+		  <div class="item">
+		    <img class="ui avatar image hand" src="/team/team-katya-aragao.jpg" data-title="Katya Aragão" data-content="{{_ 'producer and actress in the role of the police'}}" data-variation="inverted">
+		    <div class="content">
+		      <div class="header">Katya Aragão</div>
+		    </div>
+		  </div>
+		  <div class="item">
+		    <img class="ui avatar image hand" src="/team/team-enerlid-franca-e-lagos.jpg" data-title="Enerlid Franca e Lagos" data-content="{{_ 'producer and actor in the role of the police'}}" data-variation="inverted">
+		    <div class="content">
+		      <div class="header">Enerlid Franca e Lagos</div>
+		    </div>
+		  </div>	
+		  <div class="item">
+		    <img class="ui avatar image hand" src="/team/team-daena-neto.jpg" data-title="Daena Neto" data-content="{{_ 'producer'}}" data-variation="inverted">
+		    <div class="content">
+		      <div class="header">Daena Neto</div>
+		    </div>
+		  </div>  
+		  <div class="item">
+		    <img class="ui avatar image hand" src="/team/team-ajala-carvalho.jpg" data-title="Ajala Carvalho" data-content="{{_ 'producer'}}" data-variation="inverted">
+		    <div class="content">
+		      <div class="header">Ajala Carvalho</div>
+		    </div>
+		  </div>
+		  <div class="item">
+		    <img class="ui avatar image hand" src="/team/team-katia-silva.jpg" data-title="Katia Silva" data-content="{{_ 'stylist'}}" data-variation="inverted">
+		    <div class="content">
+		      <div class="header">Katia Silva</div>
+		    </div>
+		  </div>
+		  <div class="item">
+		    <img class="ui avatar image hand" src="/team/team-cintya-gracias.jpg" data-title="Cintya Gracias" data-content="{{_ 'stylist assistant'}}" data-variation="inverted">
+		    <div class="content">
+		      <div class="header">Cintya Gracias</div>
+		    </div>
+		  </div>
+		  <div class="item">
+		    <img class="ui avatar image hand" src="/team/team-maisa-ferreira.jpg" data-title="Maisa Ferreira" data-content="{{_ 'stylist'}}" data-variation="inverted">
+		    <div class="content">
+		      <div class="header">Maisa Ferreira</div>
+		    </div>
+		  </div>
+		  <div class="item">
+		    <img class="ui avatar image hand" src="/team/team-merry-pinto.jpg" data-title="Merry Pinto" data-content="{{_ 'make-up'}}" data-variation="inverted">
+		    <div class="content">
+		      <div class="header">Merry Pinto</div>
+		    </div>
+		  </div>
+		  <div class="item">
+		    <img class="ui avatar image hand" src="/team/team-ayridice-carvalho.jpg" data-title="Ayridice Carvalho" data-content="{{_ 'make-up'}}" data-variation="inverted">
+		    <div class="content">
+		      <div class="header">Ayridice Carvalho</div>
+		    </div>
+		  </div>
+		  <div class="item">
+		    <img class="ui avatar image hand" src="/team/team-mario-lopes.jpg" data-title="Mário Lopes" data-content="{{_ 'producer'}}" data-variation="inverted">
+		    <div class="content">
+		      <div class="header">Mário Lopes</div>
+		    </div>
+		  </div>
+		  <div class="item">
+		    <img class="ui avatar image hand" src="/team/team-catita-dias.jpg" data-title="Catita Dias" data-content="{{_ 'artist'}}, {{_ 'author of the painting elsa figueira'}}" data-variation="inverted">
+		    <div class="content">
+		      <div class="header">Catita Dias</div>
+		    </div>
+		  </div>
+		  <div class="item">
+		    <img class="ui avatar image hand" src="/team/team-dario-pequeno-paraiso.jpg" data-title="Dário Pequeno Paraíso" data-content="{{_ 'production assistant'}}" data-variation="inverted">
+		    <div class="content">
+		      <div class="header">Dário Pequeno Paraíso</div>
+		    </div>
+		  </div>
+		  <div class="item">
+		    <img class="ui avatar image hand" src="/team/team-elzo-trovoada.jpg" data-title="Elzo Trovoada" data-content="{{_ 'production assistant'}}" data-variation="inverted">
+		    <div class="content">
+		      <div class="header">Elzo Trovoada</div>
+		    </div>
+		  </div>
+		  <div class="item">
+		    <img class="ui avatar image hand" src="/team/team-danilo-costa.jpg" data-title="Danilo Costa" data-content="{{_ 'production assistant'}}" data-variation="inverted">
+		    <div class="content">
+		      <div class="header">Danilo Costa</div>
+		    </div>
+		  </div>
+		  <div class="item">
+		    <img class="ui avatar image hand" src="/team/team-jose-quaresma.jpg" data-title="José Quaresma" data-content="{{_ 'production assistant'}}" data-variation="inverted">
+		    <div class="content">
+		      <div class="header">José Quaresma</div>
+		    </div>
+		  </div>
+		  <div class="item">
+		    <img class="ui avatar image hand" src="/team/team-karlley-frota.jpg" data-title="Karlley Frota" data-content="{{_ 'production assistant'}}" data-variation="inverted">
+		    <div class="content">
+		      <div class="header">Karlley Frota</div>
+		    </div>
+		  </div>
+		  <div class="item">
+		    <img class="ui avatar image hand" src="/team/team-erikson-barroso.jpg" data-title="Erikson Barroso" data-content="{{_ 'production assistant'}}" data-variation="inverted">
+		    <div class="content">
+		      <div class="header">Erikson Barroso</div>
+		    </div>
+		  </div>
+		  <div class="item">
+		    <img class="ui avatar image hand" src="/team/team-neemias-martins.jpg" data-title="Neemias Martins" data-content="{{_ 'production assistant'}}" data-variation="inverted">
+		    <div class="content">
+		      <div class="header">Neemias Martins</div>
+		    </div>
+		  </div>
+		  <div class="item">
+		    <img class="ui avatar image hand" src="/team/team-fatima-almeida.jpg" data-title="Fatima Almeida" data-content="{{_ 'casting producer'}}" data-variation="inverted">
+		    <div class="content">
+		      <div class="header">Fatima Almeida</div>
+		    </div>
+		  </div>
+		  <div class="item">
+		    <img class="ui avatar image hand" src="/team/team-liis-peetermann.jpg" data-title="Liis Peetermann" data-content="{{_ 'kickstarter design'}}" data-variation="inverted">
+		    <div class="content">
+		      <div class="header">Liis Peetermann</div>
+		    </div>
+		  </div>
+		  <div class="item">
+		    <img class="ui avatar image hand" src="/team/team-nella-santo.jpg" data-title="Nella Santo" data-content="{{_ 'public relations'}}" data-variation="inverted">
+		    <div class="content">
+		      <div class="header">Nella Santo</div>
+		    </div>
+		  </div>
+		  <div class="item">
+		    <img class="ui avatar image hand" src="/team/team-marlene-fortes.jpg" data-title="Marlene Fortes" data-content="{{_ 'public relations'}}" data-variation="inverted">
+		    <div class="content">
+		      <div class="header">Marlene Fortes</div>
+		    </div>
+		  </div>
+		  <div class="item">
+		    <img class="ui avatar image hand" src="/team/team-katie-salvaterra.jpg" data-title="Katie Salvaterra" data-content="{{_ 'public relations'}}" data-variation="inverted">
+		    <div class="content">
+		      <div class="header">Katie Salvaterra</div>
+		    </div>
+		  </div>
+		  <div class="item">
+		    <img class="ui avatar image hand" src="/team/team-edlena-barros.jpg" data-title="Edlena Barros" data-content="{{_ 'public relations'}}" data-variation="inverted">
+		    <div class="content">
+		      <div class="header">Edlena Barros</div>
+		    </div>
+		  </div>
+		  <div class="item">
+		    <img class="ui avatar image hand" src="/team/team-vivalda-prazeres.jpg" data-title="Vivalda Prazeres" data-content="{{_ 'public relations'}}" data-variation="inverted">
+		    <div class="content">
+		      <div class="header">Vivalda Prazeres</div>
+		    </div>
+		  </div>
+		  <div class="item">
+		    <img class="ui avatar image hand" src="/team/team-jorcilina-correia.jpg" data-title="Jorcilina Correia" data-content="{{_ 'public relations'}}" data-variation="inverted">
+		    <div class="content">
+		      <div class="header">Jorcilina Correia</div>
+		    </div>
+		  </div>
+		  <div class="item">
+		    <img class="ui avatar image hand" src="/team/team-jasmin-pedroso.jpg" data-title="Jasmin Pedroso" data-content="{{_ 'public relations'}}" data-variation="inverted">
+		    <div class="content">
+		      <div class="header">Jasmin Pedroso</div>
+		    </div>
+		  </div>
+		  <div class="item link">
+		    <img class="ui avatar image hand" src="/team/team-cynthia-tiny.jpg" data-title="Cynthia Tiny" data-content="{{_ 'public relations'}}" data-variation="inverted">
+		    <div class="content">
+		      <div class="header">Cynthia Tiny</div>
+		    </div>
+		  </div>
+		  <div class="item">
+		    <img class="ui avatar image hand" src="/team/team-daniela-coronel-arditti.jpg" data-title="Daniela Coronel Arditti" data-content="{{_ 'public relations'}} {{_ 'and'}} {{_ 'spanish translation'}}" data-variation="inverted">
+		    <div class="content">
+		      <div class="header">Daniela Coronel Arditti</div>
+		    </div>
+		  </div>
+		  <div class="item link">
+			<img class="ui avatar image hand" src="/team/team-kjell-willhelmsen.jpg" data-title="Kjell Willhelmsen" data-content="{{_ 'norwegian translation'}}" data-variation="inverted">
+			<div class="content">
+			  <div class="header">Kjell Willhelmsen</div>
+			</div>
+		  </div>
+		  <div class="item link">
+			<img class="ui avatar image hand" src="/team/team-stella-dong.jpg" data-title="Stella Dong" data-content="{{_ 'chinese translation'}}" data-variation="inverted">
+			<div class="content">
+			  <div class="header">Stella Dong</div>
+			</div>
+		</div>
+		<div class="item link">
+			<img class="ui avatar image hand" src="/team/team-alfie-nze.jpg" data-title="Alfie Nze" data-content="{{_ 'italian translation'}}" data-variation="inverted">
+			<div class="content">
+			  <div class="header">Alfie Nze</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</template>
+
+<template name="partners">
+
+<div class="ui basic very padded aligned segment">
+<h1 class="ui aligned sectionheader">{{_ "partners"}} <i class="circular lightning pink icon link" data-content="{{_ 'awesome'}}" data-variation="inverted"></i></h1>
+<div class="ui horizontal segments">
+  <div class="ui center aligned segment">
+  	<a href="http://haam.co"><img class="ui medium rounded image" src="/sponsors/haamer-ventures.jpg" data-title="Haamer Ventures" data-content="{{_ 'platinum sponsor'}}" data-variation="inverted"></a>
+  </div>
+  <div class="ui center aligned segment">
+  	<a href="http://wnb.ee"><img class="ui medium rounded image" src="/sponsors/wnb.jpg" data-title="WNB" data-content="{{_ 'platinum sponsor'}}" data-variation="inverted"></a>
+  </div>
+  <div class="ui center aligned segment">
+  	<img class="ui medium rounded image hand" src="/sponsors/oliver-wihler.jpg" data-title="Oliver Wihler" data-content="{{_ 'silver sponsor'}}" data-variation="inverted">
+  </div>
+  <div class="ui center aligned segment becomesupporter hand">
+	 <img class="ui medium rounded image" src="/sponsors/become-supporter.jpg" data-title="{{_ 'Want to fight violence?'}}" data-content="{{_ 'Become a partner of Elsa Figueira'}}" data-variation="inverted">
+  </div>
+  <div class="ui center aligned segment becomesupporter hand">
+	 <img class="ui medium rounded image" src="/sponsors/become-supporter.jpg" data-title="{{_ 'Want to fight violence?'}}" data-content="{{_ 'Become a partner of Elsa Figueira'}}" data-variation="inverted">
+  </div>
+  <div class="ui center aligned segment becomesupporter hand">
+	 <img class="ui medium rounded image" src="/sponsors/become-supporter.jpg" data-title="{{_ 'Want to fight violence?'}}" data-content="{{_ 'Become a partner of Elsa Figueira'}}" data-variation="inverted">
+  </div>
+</div>
+<div class="ui horizontal segments">
+  <div class="ui center aligned segment">
+  	<a href="https://www.facebook.com/PEKAGBOOM"><img class="ui medium rounded image" src="/sponsors/pekagboom.jpg" data-title="Pekagboom" data-content="{{_ 'co-producer'}}" data-variation="inverted"></a>
+  </div>
+  <div class="ui center aligned segment">
+	<a href="http://galocanta.org"><img class="ui medium rounded image" src="/sponsors/galo-canta.jpg" data-title="Galo Cantá" data-content="{{_ 'co-producer'}}" data-variation="inverted"></a>
+  </div>
+  <div class="ui center aligned segment">
+	<a href="http://www.cfaomotors-stp.com/"><img class="ui medium rounded image" src="/sponsors/cfao.jpg" data-title="CFAO" data-content="{{_ 'supporter'}}" data-variation="inverted"></a>
+  </div>
+  <div class="ui center aligned segment">
+	 <a href="https://www.facebook.com/OceanuesGuestHousestp"><img class="ui medium rounded image" src="/sponsors/oceanus.jpg" data-title="Oceanus" data-content="{{_ 'supporter'}}" data-variation="inverted"></a>
+  </div>
+  <div class="ui center aligned segment">
+	 <a href="https://www.facebook.com/copinetsolutions"><img class="ui medium rounded image" src="/sponsors/copinet.jpg" data-title="Copinet" data-content="{{_ 'supporter'}}" data-variation="inverted"></a>
+  </div>
+  <div class="ui center aligned segment">
+  	<a href="http://cst.st"><img class="ui medium rounded image" src="/sponsors/cst.jpg" data-title="CST" data-content="{{_ 'supporter'}}" data-variation="inverted"></a>
+  </div>
+</div>
+<div class="ui horizontal segments">
+  <div class="ui center aligned segment">
+	 <a href="https://www.facebook.com/PNstp"><img class="ui medium rounded image" src="/sponsors/policia-nacional-stp.jpg" data-title="{{_ 'policia nacional'}}" data-content="{{_ 'supporter'}}" data-variation="inverted"></a>
+  </div>
+  <div class="ui center aligned segment">
+	 <a href="https://liis.co"><img class="ui medium rounded image" src="/sponsors/liis-peetermann.jpg" data-title="Liis Peetermann" data-content="{{_ 'supporter'}}" data-variation="inverted"></a>
+  </div>
+  <div class="ui center aligned segment">
+	 <a href="https://www.facebook.com/Casa-Comercial-Sofia-Filhos-1588768538020115/"><img class="ui medium rounded image" src="/sponsors/casa-comercial-sofia-e-filhos.jpg" data-title="Casa Comercial Sofia e Filhos" data-content="{{_ 'supporter'}}" data-variation="inverted"></a>
+  </div>
+   <div class="ui center aligned segment">
+	 <a href="https://www.facebook.com/LojaAtentikaSTome/"><img class="ui medium rounded image" src="/sponsors/autentika.jpg" data-title="Loja Autentika S.Tomé" data-content="{{_ 'supporter'}}" data-variation="inverted"></a>
+  </div>
+  <div class="ui center aligned segment">
+	 <a href="http://www.conceitocasa.com"><img class="ui medium rounded image" src="/sponsors/conceito-casa.jpg" data-title="Conceito Casa" data-content="{{_ 'supporter'}}" data-variation="inverted"></a>
+  </div>
+  <div class="ui center aligned segment">
+	 <a href="http://linhavermelha.st"><img class="ui medium rounded image" src="/sponsors/linha-vermelha.jpg" data-title="Linha Vermelha" data-content="{{_ 'supporter'}}" data-variation="inverted"></a>
+  </div>
+</div>
+</div>
+</template>
+
+<template name="thanks">
+<div class="ui basic very padded aligned segment">
+<h1 class="ui aligned sectionheader">{{_ "supporters"}} <i class="circular users pink icon link" data-content="{{_ 'thank you very much'}}" data-variation="inverted"></i></h1>
+<div class="container">
+<div class="ui padded segment">
+<h4 class="ui aligned"><i class="yellow star icon"></i> Cyrus Farivar <i class="yellow star icon"></i> Sofia Pontes <i class="yellow star icon"></i> Antonieta Almeida <i class="yellow star icon"></i> Hamilton Cruz <i class="yellow star icon"></i> Yves Peladeau <i class="yellow star icon"></i> Wannes Debusschere <i class="yellow star icon"></i> Albano Baptista <i class="yellow star icon"></i> Vladimyr Vera Cruz <i class="yellow star icon"></i> Carla Neves <i class="yellow star icon"></i> Yves Peladeau <i class="yellow star icon"></i> Oliver Wihler <i class="yellow star icon"></i> Guido Kundla <i class="yellow star icon"></i> Liivi Haamer <i class="yellow star icon"></i> Urmo Rae <i class="yellow star icon"></i> Maise Bragança <i class="yellow star icon"></i> Rui Holger Rodrigues <i class="yellow star icon"></i>Veljo Haamer <i class="yellow star icon"></i> <i class="yellow star icon"></i>Hanno Haamer <i class="yellow star icon"></i> Virna Neves <i class="yellow star icon"></i> Esterline Género <i class="yellow star icon"></i> Hélder Lima <i class="yellow star icon"></i> Samuel António <i class="yellow star icon"></i> Neusa Trovoada <i class="yellow star icon"></i> Osana Leal <i class="yellow star icon"></i> Nig D'Alva <i class="yellow star icon"></i> Hoji Fortuna <i class="yellow star icon"></i> Joost De Raeymaeker <i class="yellow star icon"></i> Eduardo Cunha <i class="yellow star icon"></i> Eva Ladva <i class="yellow star icon"></i> Dagmar Mäe <i class="yellow star icon"></i> Pedro Canavilhas <i class="yellow star icon"></i> Osana Leal <i class="yellow star icon"></i> Kaisa Masso <i class="yellow star icon"></i></h4>
+</div>
+</div>
+</div>
+</template>
+
+<template name="footer">
+<div class="ui basic very padded center aligned segment">
+<h1 class="ui aligned sectionheader"><a href="mailto:elsafigueira@haam.co"><i class="circular mail outline pink icon link" data-content="{{_ 'Get in touch'}}" data-variation="inverted"></i></a></h1>
+<div class="ui container">
+	<button class="ui facebook circular basic button" data-content="{{_ 'Facebook'}}" data-variation="inverted">
+	  <a href="https://www.facebook.com/ElsaFigueiraOfficial">
+		  <i class="facebook icon"></i>
+		  Facebook
+	  </a>
+	</button>
+	<button class="ui twitter circular basic button" data-content="{{_ 'Twitter'}}" data-variation="inverted">
+		<a href="https://twitter.com/elsa_fantastica">
+		  <i class="twitter icon"></i>
+		  Twitter
+	  	</a>
+	</button>
+	<button class="ui instagram circular basic button" data-content="{{_ 'Instagram'}}" data-variation="inverted">
+		<a href="https://instagram.com/elsafigueiraofficial/">
+		  <i class="instagram icon"></i>
+		  Instagram
+		</a>
+	</button>
+	<button class="ui youtube circular basic button" data-content="{{_ 'YouTube'}}" data-variation="inverted">
+		 <a href="https://www.youtube.com/channel/UCWGHFz5wxfGdVxLQtNEt86g">
+		  <i class="youtube icon"></i>
+		  YouTube
+		 </a>
+	</button>
+</div>
+<h4 class="ui aligned"><a href="mailto:elsafigueira@haam.co">elsafigueira@haam.co</a></h4>
+<h4 class="ui aligned">Bitcoin 3NrTjyCik9ssC3Wzb4qD8PkqBhhqjNnaMc</h4>
+<h4 class="ui aligned">{{_ "A Haamer Ventures OÜ, Galo Cantá and Pekagboom production"}}</h4>
+<h4 class="ui aligned">&copy; 2015</h4>
+</div>
+</template>

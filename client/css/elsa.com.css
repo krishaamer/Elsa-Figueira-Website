@@ -1,0 +1,58 @@
+
+
+body { 
+	margin: 0; 
+  background: #f9f9f9;
+
+}
+
+h1.heroheader {
+
+  font-style: italic;
+  font-size: 2rem !important;
+}
+
+a {
+  color: #e03997;
+  opacity: 0.8;
+}
+
+a:hover {
+  color: #e03997;
+  opacity: 1;
+}
+
+.ui.massive.button {
+  font-size: 3rem;
+}
+
+h1,h2,h3,h4,h5,h6, p {
+   /* color: #fff; */
+}
+h1.sectionheader {
+  padding: 60px;
+}
+
+.hand {
+  cursor: pointer;
+}
+
+.ui.horizontal.divider:before, .ui.horizontal.divider:after {
+  background: none;
+}
+
+.ui.basic.buttons {
+  border: none;
+}
+
+.ui.basic.pink.buttons .button, .ui.basic.pink.button {
+  box-shadow: none !important;
+}
+
+.ui.basic.buttons .button {
+  border: none;
+}
+
+#iron-router-progress {
+  background-color: #e03997;
+}

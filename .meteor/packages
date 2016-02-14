@@ -1,0 +1,51 @@
+# Meteor packages used by this project, one per line.
+# Check this file (and the other files in this directory) into your repository.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+meteor-base             # Packages every Meteor app needs to have
+mobile-experience       # Packages for a great mobile UX
+mongo                   # The database Meteor supports right now
+blaze-html-templates    # Compile .html files into Meteor Blaze views
+session                 # Client-side reactive dictionary for your app
+jquery                  # Helpful client-side library
+tracker                 # Meteor's client-side reactive programming library
+
+standard-minifiers      # JS/CSS minifiers run for production mode
+es5-shim                # ECMAScript 5 compatibility for older browsers.
+ecmascript              # Enable ECMAScript2015+ syntax in app code
+
+iron:router
+semantic:ui-video
+semantic:ui-embed
+semantic:ui-button
+semantic:ui-grid
+semantic:ui-reset
+semantic:ui-site
+semantic:ui-card
+semantic:ui-segment
+semantic:ui-header
+semantic:ui-image
+semantic:ui-list
+semantic:ui-item
+semantic:ui-visibility
+semantic:ui-popup
+semantic:ui-icon
+semantic:ui-transition
+tap:i18n
+tap:i18n-ui
+semantic:ui-dropdown
+semantic:ui-menu
+spiderable
+semantic:ui-feed
+semantic:ui-label
+semantic:ui-divider
+semantic:ui-dimmer
+semantic:ui-modal
+okgrow:analytics
+okgrow:router-autoscroll
+service-configuration
+meteorhacks:kadira
+accounts-facebook
+meteorhacks:fast-render
