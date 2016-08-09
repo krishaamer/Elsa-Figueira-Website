@@ -1,7 +1,3 @@
-Meteor.startup(function () {
- 
-});
-
 Meteor.publish("access_token", function () {
 	return Meteor.users.find({ _id : this.userId}, 
 		{'services.facebook.accessToken': 1}
