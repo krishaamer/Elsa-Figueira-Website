@@ -1,50 +1,86 @@
+// Simple analytics placeholder - replace with your preferred analytics service
+const analytics = {
+  track: function(event, data) {
+    console.log('Analytics:', event, data);
+    // Add your analytics service here (Google Analytics, Mixpanel, etc.)
+  },
+  identify: function(data) {
+    console.log('Analytics identify:', data);
+    // Add your analytics service here
+  }
+};
+
+// Simple language state
+const Language = {
+  current: 'en',
+  setLanguage: function(lang) {
+    this.current = lang;
+    // Store in session for persistence
+    Session.set('language', lang);
+  },
+  getLanguage: function() {
+    return Session.get('language') || this.current;
+  }
+};
+
+// Use FlowRouter for modern routing
+const SimpleRouter = FlowRouter;
+
+// FlowRouter routes with simple template rendering
+FlowRouter.route('/', {
+  name: 'home',
+  action: function() {
+    Language.setLanguage("en");
+    analytics.track("English");
+  }
+});
+
+FlowRouter.route('/video', {
+  name: 'video',
+  action: function() {
+    analytics.track("Showing video");
+    analytics.track("Default home");
+  }
+});
+
+FlowRouter.route('/stopviolence', {
+  name: 'stopviolence',
+  action: function() {
+    Language.setLanguage("en");
+    analytics.track("English");
+  }
+});
+
+FlowRouter.route('/peata-vagivald', {
+  name: 'peata-vagivald',
+  action: function() {
+    Language.setLanguage("et");
+    analytics.track("Estonian");
+  }
+});
+
+FlowRouter.route('/stopviolencia', {
+  name: 'stopviolencia',
+  action: function() {
+    Language.setLanguage("pt");
+    analytics.track("Portuguese");
+  }
+});
+
 Meteor.startup(function () {
   analytics.track("Client Startup");
-});
 
-Router.configure({
-  layoutTemplate: 'layout',
-  waitOn: function(){ 
-    Meteor.setTimeout(function(){ 
-      Accounts.loginServicesConfigured(); 
-    },500); 
-  } 
-});
-
-Router.route('/', function() {
-  TAPi18n.setLanguage("en")
-  this.render('stopviolence');
-});
-
-Router.route('/video', function () {
-  this.render('video');
-  analytics.track("Showing video");
-  analytics.track("Default home");
-});
-
-Router.route('/stopviolence', function () {
-  TAPi18n.setLanguage("en")
-  this.render('stopviolence');
-  analytics.track("English");
-});
-
-Router.route('/peata-vagivald', function () {
-  TAPi18n.setLanguage("et")
-  this.render('stopviolence');
-  analytics.track("Estonian");
-});
-
-Router.route('/stopviolencia', function () {
-  TAPi18n.setLanguage("pt")
-  this.render('stopviolence');
-  analytics.track("Portuguese");
+  // Wait for accounts to be configured
+  Meteor.setTimeout(function(){
+    Accounts.loginServicesConfigured();
+  }, 500);
 });
 
 
 Template.stopviolence.events({
   "click .joinnow": function (event, template) {
     analytics.track("Click show video");
-    Router.go('/video#elsa');
+    SimpleRouter.go('/video#elsa');
   }
 });
 
@@ -59,11 +95,11 @@ Template.header.onRendered(function () {
   $('.ui.dropdown').dropdown({
     onChange: function(value) {
       if(value == "et") {
-        Router.go('/peata-vagivald');
+        SimpleRouter.go('/peata-vagivald');
       } else if (value == "pt") {
-        Router.go('/stopviolencia');
+        SimpleRouter.go('/stopviolencia');
       } else {
-        Router.go('/stopviolence');
+        SimpleRouter.go('/stopviolence');
       }
     }
   });
