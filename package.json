@@ -1,0 +1,48 @@
+{
+  "name": "elsa-figueira-website",
+  "version": "2.0.0",
+  "description": "Website for the Elsa Figueira campaign against domestic violence - Modernized to Meteor 3.0",
+  "main": "server/main.js",
+  "scripts": {
+    "start": "meteor run",
+    "dev": "meteor run",
+    "build": "meteor build --directory ../build",
+    "test": "meteor test --once --driver-package meteortesting:mocha",
+    "test-watch": "meteor test --driver-package meteortesting:mocha",
+    "lint": "eslint .",
+    "deploy": "meteor deploy",
+    "reset": "meteor reset"
+  },
+  "keywords": [
+    "meteor",
+    "domestic-violence",
+    "awareness",
+    "elsa-figueira",
+    "campaign",
+    "multilingual"
+  ],
+  "author": "Elsa Figueira Campaign",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "."
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "meteor": ">=3.0.0"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.24.0",
+    "meteor-node-stubs": "^1.2.0"
+  },
+  "devDependencies": {
+    "@types/meteor": "^2.9.0",
+    "typescript": "^5.4.0"
+  },
+  "meteor": {
+    "mainModule": {
+      "client": "client/main.js",
+      "server": "server/main.js"
+    }
+  }
+}

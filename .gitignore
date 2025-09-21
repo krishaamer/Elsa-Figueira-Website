@@ -1,4 +1,10 @@
-
-settings.json
-
-mup.js
+node_modules/
+.next/
+out/
+build/
+pnpm-lock.yaml
+.DS_Store
+.env*
+!.env.local.example
+.vercel
+*.tsbuildinfo
