@@ -37,13 +37,13 @@ Accounts.onCreateUser(function (options, user) {
 });
 
 /* Make sure we're using the correct API keys for the dev / live servers */
-ServiceConfiguration.configurations.remove({
+ServiceConfiguration.configurations.removeAsync({
   service: "facebook"
 });
 
 if(Meteor.absoluteUrl() == "http://localhost:3000/"){
 
-	ServiceConfiguration.configurations.upsert(
+	ServiceConfiguration.configurations.upsertAsync(
 	{ service: "facebook" },
 	  {
 	    $set: {
@@ -56,7 +56,7 @@ if(Meteor.absoluteUrl() == "http://localhost:3000/"){
 
 } else {
 
-	ServiceConfiguration.configurations.upsert(
+	ServiceConfiguration.configurations.upsertAsync(
 	{ service: "facebook" },
 	  {
 	    $set: {
