@@ -26,20 +26,25 @@ Accounts.onCreateUser(function (options, user) {
   return user;
 });
 
-// Make sure we're using the correct API keys for the dev / live servers
-ServiceConfiguration.configurations.removeAsync({ service: 'facebook' });
+// Configure Facebook OAuth via settings or environment variables
+const envName = process.env.METEOR_ENV || process.env.NODE_ENV || (Meteor.isDevelopment ? 'development' : 'production');
+const fbSettings = (Meteor.settings && Meteor.settings.facebook) || {};
+const fbEnv = (typeof fbSettings === 'object' && (fbSettings[envName] || fbSettings)) || {};
 
-const isLocal = Meteor.absoluteUrl() === 'http://localhost:3000/';
-ServiceConfiguration.configurations.upsertAsync(
-  { service: 'facebook' },
-  {
-    $set: {
-      appId: isLocal ? '1613725145554917' : '1607296829531082',
-      loginStyle: 'popup',
-      secret: isLocal ? 'abf743e3c480aa4894cb474fdf2f3192' : '4b17ab078aaee007dd0a0ad7b1645839'
-    }
-  }
-);
+const appId = fbEnv.appId || process.env.FACEBOOK_APP_ID || (Meteor.isDevelopment ? process.env.FACEBOOK_APP_ID_DEV : process.env.FACEBOOK_APP_ID_PROD);
+const secret = fbEnv.secret || process.env.FACEBOOK_SECRET || (Meteor.isDevelopment ? process.env.FACEBOOK_SECRET_DEV : process.env.FACEBOOK_SECRET_PROD);
+const loginStyle = fbEnv.loginStyle || process.env.FACEBOOK_LOGIN_STYLE || 'popup';
+
+ServiceConfiguration.configurations.removeAsync({ service: 'facebook' });
+if (appId && secret) {
+  ServiceConfiguration.configurations.upsertAsync(
+    { service: 'facebook' },
+    { $set: { appId, secret, loginStyle } }
+  );
+} else {
+  // eslint-disable-next-line no-console
+  console.warn('Facebook OAuth not configured. Set Meteor.settings.facebook or FACEBOOK_APP_ID/SECRET');
+}
 
 Meteor.publish("current_user_data", function () {
   if (!this.userId) return this.ready();

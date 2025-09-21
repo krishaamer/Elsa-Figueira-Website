@@ -113,6 +113,8 @@ Template.header.onRendered(function () {
       }
     }
   });
+  $('.button').popup();
+  $('.icon').popup();
 });
 
 Template.stopviolence.onRendered(function () {
@@ -141,11 +143,7 @@ Template.team.onRendered(function () {
 });
 
 
-Template.header.onRendered(function () {
-
-  $('.button').popup();
-  $('.icon').popup();
-});
+// (merged header onRendered above)
 
 
 Template.header.helloName = function() {
