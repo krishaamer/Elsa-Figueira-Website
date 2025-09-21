@@ -17,8 +17,17 @@ Template.registerHelper('_', function (key) {
   return (dict && dict[key]) || key;
 });
 
+// Expose current language and a readable label for UI
+Template.registerHelper('currentLanguage', function () {
+  return getCurrentLanguage();
+});
+
+Template.registerHelper('currentLanguageLabel', function () {
+  const lang = getCurrentLanguage();
+  return lang === 'et' ? 'Eesti' : lang === 'pt' ? 'Português' : 'English';
+});
+
 // Ensure a default language is set
 if (!Session.get('language')) {
   Session.set('language', 'en');
 }
-

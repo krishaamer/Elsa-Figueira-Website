@@ -100,6 +100,8 @@ Template.partners.events({
 });
 
 Template.header.onRendered(function () {
+  const initial = Language.getLanguage();
+  $('.ui.dropdown').dropdown('set selected', initial);
   $('.ui.dropdown').dropdown({
     onChange: function(value) {
       if(value == "et") {
