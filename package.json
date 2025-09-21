@@ -33,7 +33,8 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.24.0",
-    "meteor-node-stubs": "^1.2.0"
+    "meteor-node-stubs": "^1.2.0",
+    "semantic-ui-css": "^2.5.0"
   },
   "devDependencies": {
     "@types/meteor": "^2.9.0",
