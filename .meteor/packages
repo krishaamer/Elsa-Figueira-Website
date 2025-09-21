@@ -23,4 +23,5 @@ facebook-config-ui@1.0.4
 dynamic-import@0.7.4
 underscore@1.6.4
 blaze-html-templates
-semantic:ui-css
+semantic:ui
+ostrio:flow-router-extra

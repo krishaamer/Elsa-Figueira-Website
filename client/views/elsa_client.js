@@ -23,14 +23,49 @@ const Language = {
   }
 };
 
-// Simple router for basic navigation
-const SimpleRouter = {
-  go: function(path) {
-    window.location.href = path;
-  }
-};
+// Use FlowRouter for modern routing
+const SimpleRouter = FlowRouter;
 
-// Router configuration - will be set up after FlowRouter is available
+// FlowRouter routes with simple template rendering
+FlowRouter.route('/', {
+  name: 'home',
+  action: function() {
+    Language.setLanguage("en");
+    analytics.track("English");
+  }
+});
+
+FlowRouter.route('/video', {
+  name: 'video',
+  action: function() {
+    analytics.track("Showing video");
+    analytics.track("Default home");
+  }
+});
+
+FlowRouter.route('/stopviolence', {
+  name: 'stopviolence',
+  action: function() {
+    Language.setLanguage("en");
+    analytics.track("English");
+  }
+});
+
+FlowRouter.route('/peata-vagivald', {
+  name: 'peata-vagivald',
+  action: function() {
+    Language.setLanguage("et");
+    analytics.track("Estonian");
+  }
+});
+
+FlowRouter.route('/stopviolencia', {
+  name: 'stopviolencia',
+  action: function() {
+    Language.setLanguage("pt");
+    analytics.track("Portuguese");
+  }
+});
 
 Meteor.startup(function () {
   analytics.track("Client Startup");
@@ -39,22 +74,6 @@ Meteor.startup(function () {
   Meteor.setTimeout(function(){
     Accounts.loginServicesConfigured();
   }, 500);
-
-  // Handle language and analytics based on current page
-  const path = window.location.pathname;
-  if (path === '/video') {
-    analytics.track("Showing video");
-    analytics.track("Default home");
-  } else if (path === '/stopviolence' || path === '/') {
-    Language.setLanguage("en");
-    analytics.track("English");
-  } else if (path === '/peata-vagivald') {
-    Language.setLanguage("et");
-    analytics.track("Estonian");
-  } else if (path === '/stopviolencia') {
-    Language.setLanguage("pt");
-    analytics.track("Portuguese");
-  }
 });
 
 
