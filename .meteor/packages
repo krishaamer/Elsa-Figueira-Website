@@ -24,3 +24,4 @@ dynamic-import@0.7.4
 underscore@1.6.4
 blaze-html-templates
 ostrio:flow-router-extra
+pwix:blaze-layout

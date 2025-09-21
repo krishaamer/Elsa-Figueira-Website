@@ -1,3 +1,6 @@
+import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
+import { BlazeLayout } from 'meteor/pwix:blaze-layout';
+
 // Simple analytics placeholder - replace with your preferred analytics service
 const analytics = {
   track: function(event, data) {
@@ -23,7 +26,7 @@ const Language = {
   }
 };
 
-// Use FlowRouter for modern routing
+// Use FlowRouter for routing
 const SimpleRouter = FlowRouter;
 
 // FlowRouter routes with simple template rendering
@@ -32,6 +35,7 @@ FlowRouter.route('/', {
   action: function() {
     Language.setLanguage("en");
     analytics.track("English");
+    BlazeLayout.render('layout', { yield: 'stopviolence' });
   }
 });
 
@@ -40,6 +44,7 @@ FlowRouter.route('/video', {
   action: function() {
     analytics.track("Showing video");
     analytics.track("Default home");
+    BlazeLayout.render('layout', { yield: 'video' });
   }
 });
 
@@ -48,6 +53,7 @@ FlowRouter.route('/stopviolence', {
   action: function() {
     Language.setLanguage("en");
     analytics.track("English");
+    BlazeLayout.render('layout', { yield: 'stopviolence' });
   }
 });
 
@@ -56,6 +62,7 @@ FlowRouter.route('/peata-vagivald', {
   action: function() {
     Language.setLanguage("et");
     analytics.track("Estonian");
+    BlazeLayout.render('layout', { yield: 'stopviolence' });
   }
 });
 
@@ -64,6 +71,7 @@ FlowRouter.route('/stopviolencia', {
   action: function() {
     Language.setLanguage("pt");
     analytics.track("Portuguese");
+    BlazeLayout.render('layout', { yield: 'stopviolence' });
   }
 });
 
