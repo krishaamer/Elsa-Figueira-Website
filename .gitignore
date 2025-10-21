@@ -2,3 +2,31 @@
 settings.json
 
 mup.js
+.vercel
+
+# OS junk
+.DS_Store
+**/.DS_Store
+
+# Dependency directories
+node_modules/
+**/node_modules/
+
+# Build and framework caches
+**/.next/
+**/.turbo/
+**/.cache/
+**/.parcel-cache/
+**/.vite/
+**/.nuxt/
+**/.svelte-kit/
+
+# TypeScript and linter caches
+**/*.tsbuildinfo
+**/.eslintcache
+
+# Meteor local build cache
+**/.meteor/local/
+
+# Vercel cache (keep config, ignore cache)
+**/.vercel/cache/
