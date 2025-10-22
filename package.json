@@ -2,10 +2,6 @@
   "name": "elsa-workspace",
   "private": true,
   "packageManager": "pnpm@10.18.3",
-  "workspaces": [
-    "elsa-next",
-    "elsa-meteor"
-  ],
   "scripts": {
     "dev": "pnpm -C elsa-next dev",
     "dev:tp": "pnpm -C elsa-next dev --turbopack",

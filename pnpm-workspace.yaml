@@ -1,7 +1,0 @@
-packages:
-  - elsa-next
-  - elsa-meteor
-
-onlyBuiltDependencies:
-  - sharp
-  - unrs-resolver

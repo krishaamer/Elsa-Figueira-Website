@@ -1,18 +1,14 @@
-import Image from "next/image";
-
-export default function SemanticImage({ src, alt = "", className = "", priority = false }) {
+/* eslint-disable @next/next/no-img-element */
+export default function SemanticImage({ src, alt = "", className = "", priority = false, ...props }) {
+  // Use a plain <img> to precisely mirror Semantic UI sizing semantics
+  // and allow arbitrary data-* attributes for tooltips.
   return (
-    <Image
+    <img
       src={src}
       alt={alt}
-      width={0}
-      height={0}
-      sizes="100vw"
       className={className}
-      style={{ width: "100%", height: "auto" }}
-      priority={priority}
-      unoptimized
+      loading={priority ? "eager" : "lazy"}
+      {...props}
     />
   );
 }
-
