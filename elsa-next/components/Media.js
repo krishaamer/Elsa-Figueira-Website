@@ -133,7 +133,7 @@ export default function Media({ dict }) {
                   </div>
                   <div className="extra images">
                     <a href="http://www.rtp.pt/play/p1441/e174507/bem-vindos-2014">
-                      <SemanticImage src="/media/elsa-figueira-pekagboom-bem-vindos.jpg" alt="Bem-Vindos" />
+                      <SemanticImage className="ui image" src="/media/elsa-figueira-pekagboom-bem-vindos.jpg" alt="Bem-Vindos" />
                     </a>
                   </div>
                 </div>

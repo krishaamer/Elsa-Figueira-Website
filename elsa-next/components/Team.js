@@ -29,7 +29,6 @@ export default function Team({ dict }) {
               <SemanticImage className="ui avatar image hand" src={src} alt={name} data-title={name} data-content={t(dict, role)} data-variation="inverted" />
               <div className="content">
                 <div className="header">{name}</div>
-                <div className="description">{t(dict, role)}</div>
               </div>
             </div>
           ))}
