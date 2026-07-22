@@ -1,0 +1,16 @@
+{
+  "name": "elsa-figueira-monorepo",
+  "private": true,
+  "packageManager": "pnpm@10.18.3",
+  "workspaces": [
+    "elsa-next"
+  ],
+  "scripts": {
+    "dev": "pnpm --dir elsa-next dev",
+    "build": "pnpm --dir elsa-next build",
+    "start": "pnpm --dir elsa-next start",
+    "lint": "pnpm --dir elsa-next lint",
+    "archive:meteor:dev": "npm --prefix archive/elsa-meteor run dev",
+    "archive:meteor:build": "npm --prefix archive/elsa-meteor run build"
+  }
+}

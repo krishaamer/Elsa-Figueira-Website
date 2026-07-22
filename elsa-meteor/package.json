@@ -1,8 +1,0 @@
-{
-  "name": "elsa-meteor",
-  "private": true,
-  "scripts": {
-    "dev": "meteor",
-    "start": "meteor"
-  }
-}

@@ -1,0 +1,10 @@
+import 'semantic-ui-css/semantic.min.css';
+import 'semantic-ui-css/semantic.min.js';
+
+// Client entry point for Meteor 3.0
+import './i18n.js';
+import './templates/elsa.html';
+import './views/elsa_client.js';
+
+// Import any other client-side modules here
+// This file serves as the main entry point for all client-side code

@@ -25,14 +25,14 @@
 <div class="ui large secondary menu">	
 	<div class="menu right">
 		<div class="item">
-			<div class="ui language floating dropdown link item">
-			  <i class="world icon"></i>
-			  <div class="text"></div>
-			  <div class="menu">
-			  	<div class="item" data-value="et">Eesti</div>
-			    <div class="item" data-value="en">English</div>
-			    <div class="item" data-value="pt">Português</div>
-			  </div>
+            <div class="ui language floating dropdown link item">
+              <i class="world icon"></i>
+              <div class="text">{{currentLanguageLabel}}</div>
+              <div class="menu">
+                  <div class="item" data-value="et">Eesti</div>
+                  <div class="item" data-value="en">English</div>
+                  <div class="item" data-value="pt">Português</div>
+              </div>
 			</div>
 			{{#if currentUser}}
 				<button class="ui icon basic circular button" id="logout" data-content="{{_ 'Logout'}}" data-variation="inverted">

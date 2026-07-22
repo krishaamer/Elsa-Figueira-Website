@@ -1,0 +1,14 @@
+{
+  "facebook": {
+    "development": {
+      "appId": "YOUR_DEV_APP_ID",
+      "secret": "YOUR_DEV_SECRET",
+      "loginStyle": "popup"
+    },
+    "production": {
+      "appId": "YOUR_PROD_APP_ID",
+      "secret": "YOUR_PROD_SECRET",
+      "loginStyle": "popup"
+    }
+  }
+}

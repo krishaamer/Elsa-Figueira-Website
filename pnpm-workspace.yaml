@@ -1,0 +1,6 @@
+packages:
+  - elsa-next
+
+onlyBuiltDependencies:
+  - sharp
+  - unrs-resolver

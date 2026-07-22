@@ -1,42 +1,48 @@
-# Elsa Monorepo
+# Elsa Figueira Website
 
-This repository contains two implementations of the Elsa Figueira website:
+Monorepo for [elsafigueira.com](https://www.elsafigueira.com/), the Elsa Figueira campaign against domestic violence.
 
-- `elsa-meteor` — the original Meteor (Blaze/Iron Router) app
-- `elsa-next` — a Next.js port using pages router
+## Repository layout
 
-## Getting Started
+- `elsa-next/` — active Next.js production website, deployed on Vercel.
+- `archive/elsa-meteor/` — archived Meteor 3.3.2 implementation. The original Meteor app and its `update-deps` upgrade history have been consolidated here.
+- `docs/` — historical press and reference material.
 
-Prerequisites:
-- pnpm 10.x (`corepack enable && corepack prepare pnpm@latest --activate`)
-- Meteor (for `elsa-meteor`): `curl https://install.meteor.com/ | sh`
+The Meteor application is retained for historical reference only. It is not the production application and is excluded from the active pnpm workspace.
 
-Install workspace deps (Next.js app):
+## Active Next.js app
 
-```
+Requirements:
+
+- Node.js 20 or newer
+- pnpm 10.x
+
+From the repository root:
+
+```sh
+corepack enable
 pnpm install
-```
-
-Run Next.js (port 3000):
-
-```
 pnpm dev
 ```
 
-Run Meteor (port 3000):
+Other commands:
 
-```
-pnpm dev:meteor
-```
-
-Build Next.js:
-
-```
+```sh
 pnpm build
+pnpm start
+pnpm lint
 ```
 
-## Structure
+For Vercel, keep the project root directory set to `elsa-next`.
 
-- `elsa-meteor/` — Meteor sources (`.meteor`, `client`, `server`, `public`, `lang`)
-- `elsa-next/` — Next.js app (assets copied to `elsa-next/public`, i18n to `elsa-next/locales`)
+## Archived Meteor app
 
+The archive can still be run for historical verification if Meteor is installed:
+
+```sh
+npm --prefix archive/elsa-meteor ci
+cp archive/elsa-meteor/settings.example.json archive/elsa-meteor/settings.development.json
+npm --prefix archive/elsa-meteor run dev -- --settings settings.development.json
+```
+
+See `archive/elsa-meteor/README.md` and `archive/elsa-meteor/UPGRADE_HISTORY.md` for details. Do not deploy the archived application or commit populated settings files.
